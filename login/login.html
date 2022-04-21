@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+   
+
+    <header>
+        <h1>AkiTem</h1>
+    </header>
+
+    
+    <div class="login">
+        <h1 class="login_title">Login</h1>
+        <form action="" class="login_form">
+            <div class="login_inputBlock">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" placeholder="Insira seu e-mail:" required>
+            </div>
+            <div class="login_inputBlock">
+                <label for="password">Senha:</label>
+                <input type="password" name="password" id="password" autocomplete="false"  placeholder="Insira sua senha" required>
+                <a class="forget_password" id="forget_password">Esqueceu a senha?</a><!--onclick="changestyle()"-->
+            </div>
+            <button type="submit">continuar</button>
+            <div class="login_inputBlock No_signup" >
+                <label>Sem cadastro?
+                    <a href="/cadastro/cadastro.html">cadastre-se</a> <!--href para pag cadastro-->
+                </label>
+            </div>
+        </form>
+
+        
+        <div class="change_password">
+            <div class="change_password_content">
+                <h2 class="change_password_content_title">Trocar a senha</h2>
+                <p class="change_password_content_text">Informe seu e-mail</p>
+                <form action="">
+                    <div class="change_password_input">
+                        <label for="change_email">E-mail:</label>
+                        <input type="email" name="change_email" id="change_email" placeholder="Insira seu e-mail:" required>
+                    </div>
+                    
+                    <div class="change_password_buttons">
+                        <a id="close_link">cancelar</a><!--onclick="changestyle()"-->
+                        <button type="submit">enviar</button>
+                    </div>
+                </form>
+
+                <div class="change_password_close" id="close_button"><!--onclick="changestyle()"-->
+                    <div class="close_left"></div>
+                    <div class="close_right"></div> 
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+    
+
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(250, 250, 250);
+}
+
+header {
+    background-image: radial-gradient(yellow, rgb(255, 208, 0));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+}
+
+header h1 {
+    font-family: 'Titan One', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 200;
+    color: green;
+}
+
+.search {
+display: flex;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+border-radius: 5px;
+}
+
+.search input {
+border: none;
+border-radius: 5px 0 0 5px;
+width: 45vw;
+padding: 5px;
+}
+
+.search input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.search button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.search button {
+    background-color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgb(233, 231, 231);
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+    height: 45px;
+}
+
+.nav-header a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    width: 20vw;
+    height: 45px;
+    font-size: 40px;
+}
+
+.nav-header a:hover {
+    color: rgb(3, 82, 3);
+}
+
+.redim-carrosel {
+    height: 300px;
+}
+
+.ajust-carrossel {
+    width: 95%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.carrosel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.categories {
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fixed-categories{
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fixed-categories a{
+   color: green;
+}
+
+.fixed-categories a:hover {
+    color: rgb(3, 82, 3);
+}
+
+.select-categories {
+    width: 8%;
+}
+
+#all-categories {
+    padding: 3px;
+    width: 100%;
+    border: none;
+    background-color: white;
+    color: green;
+}
+
+#all-categories:hover {
+    background-color: rgb(248, 245, 245);
+}
+
+#all-categories:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+#cardProducts {
+    display: flex;
+    flex-basis: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    margin: 5px;
+    width: 200px;
+    background-color: white;
+    border: 1px solid rgb(234, 234, 233);
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .item:hover {
+    box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+  }
+
+.item .item__id {
+    display: none;
+  }
+  
+  .item .item__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .item .item__image {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .item .item__add {
+    background-color: green;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    color: white;
+  }
