@@ -4,16 +4,25 @@
     font-family: sans-serif;
 }
 
-.header{
-    background-color: yellow;
-    height: 45px;
-    padding: 20px;
+header {
+    background-image: radial-gradient(yellow, rgb(255, 208, 0));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
 }
 
-#titulo{
-    font-size: 40px;
-    padding-bottom: 15px;
-    font-family: 'Titan One', cursive;
+header a {
+    font-family: 'Titan One', sans-serif;
+    text-decoration: none;
+    font-size: 3.5rem;
+    font-weight: 200;
+    color: green;
+}
+
+header a:hover {
+    text-decoration: none;
     color: green;
 }
 

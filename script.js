@@ -79,11 +79,21 @@ async function getAPIs(req, product, categorie) {
     }
   };
 
-  searchBtn.addEventListener('click', async () => {
-    const itensCards = document.querySelectorAll('.item');
-    itensCards.forEach((e) => e.parentNode.removeChild(e));
+  const listProducts = async () => {
     const { results } = await getAPIs('productGeneral', inputSearch.value);
-    createCardsProducts(results);
+    if (results.length > 0) {
+      const itensCards = document.querySelectorAll('.item');
+      itensCards.forEach((e) => e.parentNode.removeChild(e));
+      createCardsProducts(results);
+      inputSearch.value = '';
+    }
+  };
+
+  searchBtn.addEventListener('click', listProducts);
+  document.addEventListener('keypress', ({ key }) => {
+    if (key === 'Enter') {
+      listProducts();
+    }
   })
 
 window.onload = () => { 

@@ -17,10 +17,16 @@ header {
     height: 100px;
 }
 
-header h1 {
+header a {
     font-family: 'Titan One', sans-serif;
+    text-decoration: none;
     font-size: 3.5rem;
     font-weight: 200;
+    color: green;
+}
+
+header a:hover {
+    text-decoration: none;
     color: green;
 }
 
