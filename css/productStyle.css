@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+header {
+    background-image: radial-gradient(yellow, rgb(255, 208, 0));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+header a {
+    font-family: 'Titan One', sans-serif;
+    text-decoration: none;
+    font-size: 3.5rem;
+    font-weight: 200;
+    color: green;
+}
+
+header a:hover {
+    text-decoration: none;
+    color: green;
+}
+
+.search {
+    display: flex;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.search input {
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 45vw;
+    padding: 5px;
+}
+
+.search input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.search button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.search button {
+    background-color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgb(233, 231, 231);
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+    height: 45px;
+}
+
+.nav-header a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    width: 20vw;
+    height: 45px;
+    font-size: 40px;
+}
+
+.nav-header a:hover {
+    color: rgb(3, 82, 3);
+}
+
+.number-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-bottom: 28px;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color:white;
+    color: green;
+    border: 1.6px solid green;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+}
+
+.main-image {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+.galery-image {
+    border-radius: 4px 0 0 4px;
+    background-color: white;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.preview {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.preview-image {
+    width: 70px;
+    height: 70px;
+    border: 1px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.preview-image:hover {
+    border: 1px solid rgb(16, 230, 16);
+}
+
+.details-product {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 0 4px 4px 0;
+    padding: 20px;
+}
+
+.titulo-product {
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.details-pay {
+    background-color: white;
+    width: 30%;
+    margin-left: 8px;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.assessment {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.startsAva {
+    color: rgb(204, 204, 204);
+}
+
+.seleStar {
+    color: rgb(242, 200, 50);
+}
+
+.vendidos {
+    display: flex;
+}
+
+.vertical-line {
+    margin: 0 5px;
+}
+
+.informations {
+    width: 100%;
+    color: green;
+    margin-top: 5px;
+    height: 40px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.61);
+}
+
+.informations a {
+    color: green;
+}
+
+.informations a:hover {
+    color: rgb(10, 214, 10);
+    text-decoration: none;
+}
+
+.priceProduct {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    color: green;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.frete {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    color: green;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.61);
+}
+
+.align-frete {
+    display: flex;
+}
+
+.marca {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.61);
+}
+
+.section-CEP {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.calcular-prazo h4 {
+    font-size: medium;
+}
+
+.calcular-prazo button {
+    width: 18%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 208, 0);
+    color: black;
+    cursor: pointer;
+}
+
+.calcular-prazo button:hover {
+    background-color: rgb(255, 223, 78);
+}
+
+.calcular-prazo button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.calcular-prazo input {
+    width: 80%;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+.share-fav {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#favoritar {
+    display: flex;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+#favoritar:hover {
+    color: red;
+}
+
+#compartilhar {
+    display: flex;
+    cursor: pointer;
+}
+
+#compartilhar:hover {
+    color: green;
+}
+
+.buy {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.bnt-comprar {
+    width: 75%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.bnt-addCart {
+    width: 23%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid green;
+    background-color: white;
+    color: green;
+    cursor: pointer;
+}
+
+.bnt-comprar:hover {
+    background-color: rgb(5, 207, 5);
+}
+
+.bnt-addCart:hover {
+    border: 1px solid rgb(5, 207, 5);
+    color: rgb(5, 207, 5);
+}
+
+.bnt-comprar:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.bnt-addCart:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.related-products {
+    background-color: white;
+    width: 90%;
+}
+
+.more-informations {
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.related-products {
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.related-products ul {
+    display: flex;
+    overflow: hidden;
+}
+
+.related-products li {
+    display: inline-block;
+    list-style: none;
+    border: 5px solid transparent;
+}
+
+.avaliacoes {
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.categoria {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 0.85rem;
+}
+
+.btn-prev {
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    padding: 30px 5px;
+    border-radius: 8px;
+    margin: 0 5px;
+    background-color: rgb(209, 208, 208);
+    color: white;
+}
+
+.btn-prev:hover {
+    background-color: rgb(126, 126, 126);
+}
+
+.btn-prev:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.prazo-calculado {
+    display: none;
+    flex-direction: column;
+}
+

@@ -4,8 +4,9 @@ document.querySelector("a#forget_password").addEventListener("click", changestyl
 
 function changestyle(){
     let change_password = document.querySelector("div.change_password");
+    console.log(change_password);
     
-    if (change_password.style.display == "flex"){
+    if (change_password.style.display === "flex"){
         change_password.style.display = "none";
         
     } else {

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkiTem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/productStyle.css">
+    <link rel="stylesheet" href="/css/cardProducts.css">
+</head>
+
+<body>
+    <header>
+        <a href="/index.html">AkiTem</a>
+        <div class="search">
+            <input id="search" type="text" placeholder="Pesquisar">
+            <button id="search-btn" class="material-icons">search</button>
+        </div>
+        <nav class="nav-header">
+            <a class="material-icons" href="/pages/login.html">login</a>
+            <a class="material-icons" href="/index.html">home</a>
+            <a class="material-icons" href="">favorite</a>
+            <a class="material-icons" href="/pages/carrinho.html">
+                shopping_cart
+                <span class="number-card">0</span>
+            </a>
+
+        </nav>
+    </header>
+    <main>
+        <section class="details">
+            <section class="galery-image">
+                <div class="div-main-image">
+                    <img class="main-image" src="https://www.institutolojasrenner.org.br/conteudo/img/loading.gif">
+                </div>
+                <div class="preview"></div>
+            </section>
+            <section class="details-product">
+                <h1 class="titulo-product"></h1>
+                <div class="assessment">
+                    <div class="startsAva">
+                        <span class="material-icons seleStar">star</span>
+                        <span class="material-icons">star</span>
+                        <span class="material-icons">star</span>
+                        <span class="material-icons">star</span>
+                        <span class="material-icons">star</span>
+                    </div>
+                    <div class="vendidos">
+                        <p>Avaliações <span>0</span></p>
+                        <p class="vertical-line">|</p>
+                        <p>Vendidos <span id="vendidos-span"></span></p>
+                    </div>
+                </div>
+                <div class="informations">
+                    <a href="#mais">mais informações</a>
+                </div>
+                <div class="frete">
+                    <span style="color: gray;">Frete</span>
+                    <div class="align-frete">
+                        <span style="margin-left: 30px;" class="material-icons">local_shipping</span>
+                        <p style="margin-left: 10px;">Frete grátis para todo Brasil</p>
+                    </div>
+                </div>
+                <div class="marca">
+                    <span class="marca-product" style="color: gray;">Marca</span>
+                    <span style="margin-left: 30px;" class="detail-marca"></span>
+                </div>
+                <div class="marca">
+                    <span style="color: gray;">Garantia</span>
+                    <span style="margin-left: 30px;" class="garantia"></span>
+                </div>
+                <div class="share-fav">
+                    <div id="favoritar">
+                        <span style="margin-right: 5px;" class="material-icons">favorite_border</span>
+                        <p>Favoritar</p>
+                    </div>
+                    <div id="compartilhar">
+                        <span style="margin-right: 5px;" class="material-icons">share</span>
+                        <p>Compartilhar</p>
+                    </div>
+                </div>
+            </section>
+            <section class="details-pay">
+                <h3 class="priceProduct"></h3>
+                <div class="section-CEP">
+                    <div class="calcular-prazo">
+                        <h4>calcular prazo</h4>
+                        <input id="inputCep" type="text">
+                        <button id="btnCep">ok</button>
+                    </div>
+                    <div class="prazo-calculado">
+                        <div style="display: flex;">
+                            <span class="material-icons">room</span>
+                            <p id="endereco"></p>
+                        </div>
+                        <hr style="margin-top: 0;">
+                        <div style="display: flex;">
+                            <span class="material-icons">local_shipping</span>
+                            <p style="margin-left: 10px;">Receba em até 5 dias úteis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buy">
+                    <button class="bnt-comprar">Comprar Agora</button>
+                    <button class="bnt-addCart material-icons">add_shopping_cart</button>
+                </div>
+            </section>
+        </section>
+
+        <section class="related-products">
+            <h2 style="font-size: 21px;">VOCÊ TAMBÉM PODE GOSTAR</h2>
+            <hr>
+            <div class='categoria'>
+                <button id="voltar" class="btn-prev"><</button>
+                <ul class="listProducts"></ul>
+                <button id="passar" class="btn-prev">></button>
+            </div>
+        </section>
+
+        <section id="mais" class="more-informations">
+            <h2 style="font-size: 21px;">Detalhes do Produto</h2>
+            <hr>
+            <table class="table table-striped">
+                <tbody class="fullInfos"></tbody>
+            </table>
+        </section>
+
+        <section class="avaliacoes">
+            <h2 style="font-size: 21px;">Avaliações</h2>
+            <hr>
+            <form>
+                
+            </form>
+        </section>
+    </main>
+
+
+    <div class="scripts">
+        <script type="module" src="/scripts/productScript.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>

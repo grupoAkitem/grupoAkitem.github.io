@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(235, 235, 235);
 }
 
 header {
@@ -13,7 +13,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100px;
 }
 
@@ -87,10 +87,6 @@ padding: 5px;
     color: rgb(3, 82, 3);
 }
 
-.redim-carrosel {
-    height: 300px;
-}
-
 .ajust-carrossel {
     width: 95%;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
@@ -121,6 +117,7 @@ padding: 5px;
 
 .fixed-categories a{
    color: green;
+   font-size: 1rem;
 }
 
 .fixed-categories a:hover {
@@ -156,48 +153,18 @@ padding: 5px;
     margin: 40px 0;
 }
 
-.item {
+.number-card {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    height: auto;
-    margin: 5px;
-    width: 200px;
-    background-color: white;
-    border: 1px solid rgb(234, 234, 233);
-    border-radius: 5px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-
-  .item:hover {
-    box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.8);
-    transform: translateY(-2px);
-  }
-
-.item .item__id {
-    display: none;
-  }
-  
-  .item .item__title {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .item .item__image {
-    width: 100%;
-    height: 180px;
-  }
-  
-  .item .item__add {
-    background-color: green;
-    border: 0;
-    cursor: pointer;
-    margin: 0;
-    padding: 10px;
-    color: white;
-  }
+    position: absolute;
+    margin-bottom: 28px;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color:white;
+    color: green;
+    border: 1.6px solid green;
+    font-size: 12px;
+    font-family: sans-serif;
+}
