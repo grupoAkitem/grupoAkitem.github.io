@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/carrinho.css" rel="stylesheet">
+    <title>AkiTem</title>
+    <link rel="shortcut icon" href="/Imagens/Sem título-1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
-    <title>Carrinho</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/carrinho.css">
 </head>
 <body>
     <header>
         <a href="/index.html">AkiTem</a>
-    </header>
+        <div class="search">
+          <input id="search" type="text" placeholder="Pesquisar">
+          <button id="search-btn" class="material-icons">search</button>
+        </div>
+        <nav class="nav-header">
+          <a id="login-cadastro" class="material-icons" href="/pages/login.html">login</a>
+          <a class="material-icons" href="">home</a>
+          <a class="material-icons" href="/pages/quemSomos.html">work</a>
+          <a class="material-icons" href="/pages/carrinho.html">
+            shopping_cart
+            <span class="number-card">0</span>
+          </a>
+        </nav>
+      </header>
     <div class="container">
         <div class="resu">
             <h3>Resumo de produtos</h3>
@@ -20,6 +43,8 @@
             <button><a href="#">Continuar</a></button>
         </div>
     </div> 
+    <section class="cartProducts"></section>
 
+    <script type="module" src="/scripts/carrinho.js"></script>
 </body>
 </html>

@@ -266,6 +266,13 @@ header a:hover {
     background: #f00;
 }
 
+#verification {
+    display: none;
+    width: 100%;
+    align-items: center;
+    color: red;
+    padding-left: 20px;
+}
 
 @media(max-width:1440px) and (min-width: 770px){
     .login{

@@ -192,3 +192,22 @@ padding: 5px;
         transform: scale(1);
     }
 }
+
+.remove-filter {
+    display: none;
+    color: red;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.perfil-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-weight: 800;
+    margin-top: 45px;
+    color: green;
+    font-size: 12px;
+    font-family: sans-serif;
+}

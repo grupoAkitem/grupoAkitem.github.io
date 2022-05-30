@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
-    <title>Login</title>
+    <title>AkiTem</title>
+    <link rel="shortcut icon" href="/Imagens/Sem título-1.png">
     <link rel="stylesheet" href="/css/login_style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
    
@@ -18,7 +20,11 @@
     
     <div class="login">
         <h1 class="login_title">Login</h1>
-        <form action="" class="login_form">
+        <div id="verification">
+            <span class="material-icons">dangerous</span>
+            <p style="margin-left: 15px;" id="incorrect"></p>
+        </div>
+        <form class="login_form">
             <div class="login_inputBlock">
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email" placeholder="Insira seu e-mail:" required>
@@ -28,7 +34,7 @@
                 <input type="password" name="password" id="password" autocomplete="false"  placeholder="Insira sua senha" required>
                 <a class="forget_password" id="forget_password">Esqueceu a senha?</a><!--onclick="changestyle()"-->
             </div>
-            <button type="submit">continuar</button>
+            <button id="btn-entrar">continuar</button>
             <div class="login_inputBlock No_signup" >
                 <label>Sem cadastro?
                     <a href="/pages/cadastro.html">cadastre-se</a> <!--href para pag cadastro-->

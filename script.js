@@ -1,4 +1,4 @@
-import { createProductItemElement } from "./services/createElements.js";
+import { createProductItemElement, createCustomElement } from "./services/createElements.js";
 import { fetchCategories, fetchProductGeneral } from "./services/getAPIs.js";
 
 const allCategories = document.getElementById('all-categories');
@@ -6,6 +6,9 @@ const inputSearch = document.getElementById('search');
 const searchBtn = document.getElementById('search-btn');
 const selectdCategories = document.getElementById('all-categories');
 const sectionCardProducts = document.getElementById('cardProducts');
+const loginCadastro = document.getElementById('login-cadastro');
+const numberCart = document.querySelector('.number-card');
+const usuario = JSON.parse(localStorage.getItem('login'));
 
   // function para criar o select das categorias
   const selectCategories = async () => {
@@ -54,7 +57,18 @@ const redirectPesquisar = () => {
     }
   })
 
+
+  const verifications = () => {
+    if (usuario !== null && usuario.active !== false) {
+      numberCart.innerText = usuario.cart.length;
+      loginCadastro.innerText = 'perm_identity';
+      loginCadastro.href = '/pages/favoritos.html'
+      loginCadastro.appendChild(createCustomElement('span', 'perfil-name', usuario.nome.split(' ')[0]))
+    } 
+  };
+
 window.onload = () => { 
     selectCategories();
     createCardsProducts();
+    verifications();
   };
