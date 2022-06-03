@@ -2,49 +2,134 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AkiTem</title>
-    <link rel="shortcut icon" href="/Imagens/Sem título-1.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/carrinho.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AkiTem</title>
+  <link rel="shortcut icon" href="/Imagens/Sem título-1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/css/carrinho.css">
+  <link rel="stylesheet" href="/css/mobile.css">
 </head>
-<body>
-    <header>
-        <a href="/index.html">AkiTem</a>
-        <div class="search">
-          <input id="search" type="text" placeholder="Pesquisar">
-          <button id="search-btn" class="material-icons">search</button>
-        </div>
-        <nav class="nav-header">
-          <a id="login-cadastro" class="material-icons" href="/pages/login.html">login</a>
-          <a class="material-icons" href="">home</a>
-          <a class="material-icons" href="/pages/quemSomos.html">work</a>
-          <a class="material-icons" href="/pages/carrinho.html">
-            shopping_cart
-            <span class="number-card">0</span>
-          </a>
-        </nav>
-      </header>
-    <div class="container">
-        <div class="resu">
-            <h3>Resumo de produtos</h3>
-        </div>
-        <div class="continue-button">
-            <button><a href="#">Continuar</a></button>
-        </div>
-    </div> 
-    <section class="cartProducts"></section>
 
-    <script type="module" src="/scripts/carrinho.js"></script>
+<body>
+  <header>
+    <a href="/index.html">AkiTem</a>
+    <div class="search">
+      <input id="search" type="text" placeholder="Pesquisar">
+      <button id="search-btn" class="material-icons">search</button>
+    </div>
+    <nav class="nav-header">
+      <a id="login-cadastro" class="material-icons" href="/pages/login.html">login</a>
+      <a class="material-icons" href="/index.html">home</a>
+      <a class="material-icons" href="/pages/quemSomos.html">work</a>
+      <a class="material-icons" href="/pages/carrinho.html">
+        shopping_cart
+        <span class="number-card">0</span>
+      </a>
+    </nav>
+    <!--Adição Menu mobile-->
+    <nav class="navbar navbar-dark navbar-expand-md">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </nav>
+    <!--Fim Menu mobile-->
+
+  </header>
+  <!--Adição Menu mobile-->
+  <div class="mobileMenu collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a id="login" class="nav-link" href="/pages/login.html">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pages/carrinho.html">Carrinho <span id="cart-number"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pages/quemSomos.html">Quem Somos</a>
+      </li>
+    </ul>
+  </div>
+  <!--Fim Menu mobile-->
+  <main>
+    <div class="pro">
+
+      <div class="tablege">
+        <table class="table table-striped">
+          <thead>
+            <tr class="teHead">
+              <th>produto</th>
+              <th>qnt.</th>
+              <th>cod.</th>
+              <th>preço</th>
+            </tr>
+          </thead>
+          <tbody class="cartProducts"></tbody>
+        </table>
+      </div>
+
+      <div class="containerr">
+        <div class="resu">
+          <h3>Resumo do pedido</h3>
+        </div>
+        <div id="verification">
+          <span class="material-icons">dangerous</span>
+          <p style="margin-left: 15px;" id="incorrect">Cupom Invalido!</p>
+        </div>
+        <div class="precos">
+          <div class="display-tamanho">
+            <p><span id="numberItens"></span> produtos</p>
+            <p>R$ <span id="totalPrice"></span></p>
+          </div>
+          <div class="display-tamanho">
+            <p>frete</p>
+            <p>gratis</p>
+          </div>
+          <hr>
+          <div id="descriCupom" style="display: none;" class="display-tamanho">
+            <p>Cupom</p>
+            <p>SITENOTA10</p>
+            <p>- 70%</p>
+          </div>
+          <div class="display-tamanho">
+            <p>total</p>
+            <p>R$ <span id="totalCupom"></span></p>
+          </div>
+          <div class="cupom">
+            <input id="inserirCupom" placeholder="Insira seu Cupom" type="text">
+            <button id="btnAddCupom">aplicar</button>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <button class="continue-button">Continuar</button>
+          <a style="font-size: 13px;color: green;" href="/index.html">adicionar mais produtos</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script type="module" src="/scripts/carrinho.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+header {
+    background-image: radial-gradient(yellow, rgb(255, 208, 0));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+header a {
+    font-family: 'Titan One', sans-serif;
+    text-decoration: none;
+    font-size: 3.5rem;
+    font-weight: 200;
+    color: green;
+}
+
+header a:hover {
+    text-decoration: none;
+    color: green;
+}
+
+.search {
+    display: flex;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.search input {
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 45vw;
+    padding: 5px;
+}
+
+.search input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.search button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.search button {
+    background-color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgb(233, 231, 231);
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+    height: 45px;
+}
+
+.perfil-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-weight: 800;
+    margin-top: 45px;
+    color: green;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.nav-header a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    width: 20vw;
+    height: 45px;
+    font-size: 40px;
+}
+
+.nav-header a:hover {
+    color: rgb(3, 82, 3);
+}
+
+.number-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-bottom: 28px;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color:white;
+    color: green;
+    border: 1.6px solid green;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#cardProducts {
+    display: flex;
+    flex-basis: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.infoCastrais {
+    border-radius: 5px;
+    width: 28%;
+    height: 100%;
+    padding: 30px;
+    background-color: white;
+}
+
+.itn-favs{
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 71%;
+}
+
+.display-tamanho p {
+    margin: 0;
+}
+
+.display-tamanho {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 12px 0;
+    color: rgb(54, 54, 54);
+}
+
+#btn-trocar-senha {
+    width: 100%;
+    padding: 5px;
+    margin-top: 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+}
+
+#btn-trocar-senha:hover {
+    background-color: rgb(1, 184, 1);
+}
+
+#btn-trocar-senha:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+#btn-trocar-senhaa {
+    width: 100%;
+    padding: 5px;
+    margin-top: 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+}
+
+#btn-trocar-senhaa:hover {
+    background-color: rgb(1, 184, 1);
+}
+
+#btn-trocar-senhaa:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+#modal-trocar-senha {
+    position: fixed;
+    z-index: 99999;
+    background-color: rgba(41, 41, 41, 0.63);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.form-senha {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.form-senha {
+    text-align: center;
+}
+
+.inputTrocSenha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#sair-trocarSenha {
+    position: absolute;
+    cursor: pointer; 
+    right: 25px;
+    top: 25px;
+    font-size: 20px;
+    margin-left: 630px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-bottom: 280px;
+}
+
+#sair-trocarSenha:hover {
+   color: red;
+}
+
+#btn-deslogar {
+    width: 100%;
+    padding: 5px;
+    margin-top: 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: red;
+}
+
+#btn-deslogar:hover {
+    background-color: rgb(153, 1, 1);
+}
+
+#btn-deslogar:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+#verification {
+    display: none;
+    width: 100%;
+    align-items: center;
+    color: red;
+}
+
+@media(max-width:1024px){
+    #email{
+        display: inline-block;
+        word-break: break-all;
+    }
+    
+}
+@media(max-width: 767px){
+    .infoCastrais, .itn-favs{
+        width:100%;
+    }
+}
+
+@media(max-width: 550px){
+    h2{
+        font-size: 1.5rem;
+    }
+    #sair-trocarSenha{
+        top:40;
+        right: 40px;
+    }
+    #trocarSenha{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .inputTrocSenha{
+        display:flex;
+        flex-direction: column;
+        width: 100% ;
+    }
+    .trocSenhaIn{
+        width: 100%;
+    }
+    .form-senha{
+        width: 100%;
+        height: 80%;
+    }
+}
+
+@media(max-width: 375px){
+    .form-senha{
+        padding: 15px;
+    }
+}
+

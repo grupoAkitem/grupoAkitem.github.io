@@ -23,13 +23,15 @@ const searchBtn = document.getElementById('search-btn');
 const favoritar = document.getElementById('favoritar');
 const fav = document.querySelector('.fav');
 const numberCart = document.querySelector('.number-card');
+const btnComprar = document.querySelector('.bnt-comprar');
 const loginCadastro = document.getElementById('login-cadastro');
 const usuario = JSON.parse(localStorage.getItem('login'));
 const cart = {
     id: '',
-    thumb: '',
+    thumbnail: '',
     price: '',
     title: '',
+    quanty: 1,
 }
 
 const createGalery = ({ pictures }) => {
@@ -80,7 +82,7 @@ const createTable = (details) => {
 
 const createInformayionsCart = ({ title, price, thumbnail, id }) => {
     cart.id = id;
-    cart.thumb = thumbnail;
+    cart.thumbnail = thumbnail;
     cart.price = price.toFixed(2);
     cart.title = title;
 };
@@ -147,9 +149,11 @@ btnCep.addEventListener('click', async () => {
         const en = `${endre.logradouro}, ${endre.bairro} - ${endre.localidade}/${endre.uf}`;
         endereco.innerText = en
         prazoCalculado.style.display = 'flex';
+        calcularPrazo.style.display = 'none';
+        if (usuario !== null && usuario.active !== false) {
         usuario.cep = inputCep.value;
         localStorage.setItem('login', JSON.stringify(usuario));
-        calcularPrazo.style.display = 'none';
+        }
     } else {
         inputCep.style.border = '2px solid red';
     }
@@ -205,6 +209,16 @@ const redirectPesquisar = () => {
         }
     }) 
 
+    btnComprar.addEventListener('click', () => {
+        if (usuario === null || usuario.active === false) {
+            window.location.href = '/pages/login.html';
+        } else {
+            usuario.cart = [...usuario.cart, cart];
+            localStorage.setItem('login', JSON.stringify(usuario));
+            window.location.href = '/pages/carrinho.html';
+        }
+    })
+
 const verifications = () => {
     if (usuario !== null && usuario.active !== false) {
         const vericart = usuario.cart.some((e) => e.id === cart.id);
@@ -223,8 +237,39 @@ const verifications = () => {
         if (usuario.cep !== '') {
             inputCep.value = usuario.cep;
         }
+
+           //         Para disp. mobile     //
+    document.querySelector(".nav-item #login").setAttribute("id", "login-cadastro");
+    document.querySelector(".nav-item #login-cadastro").innerText = 'perm_identity';
+    document.querySelector(".nav-item #login-cadastro").classList.add("material-icons")
+    document.querySelector(".nav-item #login-cadastro").href = '/pages/favoritos.html'
+    document.querySelector(".nav-item #login-cadastro").appendChild(createCustomElement('span', 'perfil-name', usuario.nome.split(' ')[0]));
+    document.getElementById("cart-number").innerText = `(${usuario.cart.length})`;
     } 
 };
+
+const btnAvaliar = document.getElementById('btn-avaliar');
+const modalTrocSenha = document.getElementById('modal-trocar-senha');
+const inputsTrocSenha = document.querySelectorAll('.trocSenhaIn');
+const btnSenhaConfirm = document.getElementById('btn-trocar-senhaa');
+const sairModal = document.getElementById('sair-trocarSenha');
+
+btnAvaliar.addEventListener('click', () => {
+    modalTrocSenha.style.display = 'flex';
+})
+
+sairModal.addEventListener('click', () => {
+    modalTrocSenha.style.display = 'none';
+})
+
+btnSenhaConfirm.addEventListener('click', () => {
+    if (inputsTrocSenha[1].value === inputsTrocSenha[2].value && inputsTrocSenha[0].value === usuario.senha && inputsTrocSenha[2].value !== '') {
+        usuario.active = false;
+        usuario.senha = inputsTrocSenha[1].value;
+        localStorage.setItem('login', JSON.stringify(usuario));
+        window.location.href = '/pages/login.html';
+    }
+})
 
 window.onload = () => {
     createDetails();

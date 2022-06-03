@@ -34,6 +34,11 @@ confirmBtn.addEventListener('click', (event) => {
         verification.style.display = 'flex';
         password.style.border = '2px solid red';
         confirmpassword.style.border = '2px solid red';
+    } else if (password.value.length < 6) {
+        incorrect.innerText = 'Sua senha precisa de no mínimo 6 caracteres'
+        verification.style.display = 'flex';
+        password.style.border = '2px solid red';
+        confirmpassword.style.border = '2px solid red';
     } else if (!regex.test(email.value)) {
         incorrect.innerText = 'Email incorreto'
         verification.style.display = 'flex';
@@ -71,8 +76,6 @@ genderGroup.addEventListener('click', ({ target }) => {
         };
     }
 });
-
-
 
 
 

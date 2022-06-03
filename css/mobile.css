@@ -1,0 +1,190 @@
+.select-categories {
+  width: 15vw;
+}
+
+.fixed-categories {
+  flex-wrap: wrap;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/*--------Pag Produto--------*/
+
+@media(max-width: 1296px) and (min-width: 890px) {
+
+  .calcular-prazo button,
+  .calcular-prazo #inputCep {
+    width: 100%;
+  }
+
+  .calcular-prazo #inputCep {
+    margin-bottom: 10px;
+  }
+
+  .bnt-comprar {
+    margin-right: 5px;
+    height: 50px;
+  }
+
+  .bnt-addCart {
+    width: 25%;
+    height: 50px;
+  }
+
+}
+
+@media(max-width: 890px) and (min-width: 767px) {
+  .details {
+    width: 95%;
+  }
+}
+
+@media(max-width: 890px) {
+  .details {
+    flex-direction: column;
+  }
+
+  .galery-image {
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 0 20px;
+  }
+
+  .preview {
+    flex-direction: column;
+    height: 450px;
+  }
+
+  .main-image {
+    max-width: 400px;
+  }
+
+  .details-product,
+  .details-pay,
+  .related-products,
+  .more-informations,
+  .avaliacoes {
+    width: 90vw;
+    margin: 0 20px;
+  }
+
+}
+
+@media(max-width:580px) {
+  .main-image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 425px) {
+  .main-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/*--------Fim Pag Produto--------*/
+
+
+
+@media(max-width: 900px) and (min-width: 767px) {
+  header a {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+
+  #login-cadastro {
+    display: inline-flex;
+    font-size: 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .perfil-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+
+    position: unset;
+  }
+
+  .navbar-toggler {
+    background-color: green;
+  }
+
+  header a {
+    font-size: 2rem;
+  }
+
+  #search {
+    width: 30vw;
+  }
+
+  .nav-header {
+    display: none;
+  }
+
+  .select-categories {
+    text-align: center;
+    width: 100%;
+  }
+
+  .fixed-categories {
+    display: none;
+  }
+
+  #all-categories {
+    text-align: center;
+    width: 90vw;
+  }
+
+  .mobileMenu {
+    background-color: rgba(255, 236, 126, 0.918);
+    text-align: center;
+  }
+
+  .mobileMenu a {
+    font-size: 1.3rem;
+    color: green;
+  }
+
+  .mobileMenu a:hover {
+    color: rgb(3, 82, 3);
+    background-color: rgb(255, 200, 100);
+  }
+
+  main {
+    display: block;
+  }
+
+  .categorias {
+    width: 100vw;
+    height: 260px;
+    overflow: auto;
+  }
+
+  .loading {
+    top: 450px;
+  }
+}
+
+
+
+@media (max-width: 425px) {
+  header a {
+    font-size: 1.5rem;
+  }
+
+  .categorias {
+    height: 190px;
+  }
+
+}

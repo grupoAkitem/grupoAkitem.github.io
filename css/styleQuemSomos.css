@@ -111,12 +111,18 @@ header a:hover {
     font-family: 'Roboto', sans-serif;
 }
 
+.info{
+    display:flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
 div h1 {
     margin-top: 10px;
     font-family: 'Titan One', sans-serif;
     font-size: 1.450rem;
     font-weight: 200;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 11px
 }
 
@@ -131,7 +137,7 @@ div h2 {
     width: 50vw;
     height: 25px;
     margin-left: 10px;
-    margin-top: 25px
+    margin-top: 25px;
 }
 
 div h3 {
@@ -164,4 +170,30 @@ div h5 {
     font-weight: 200;
     margin-top: 50px;
     margin-left: 11px
+}
+
+@media (max-width: 768px){
+    .quem-somos{
+        width: 100vw;
+        height: fit-content;
+        margin-top: 10px;
+        padding: 10px;
+    }
+    div h1, div h3, div h5 {
+        display:block;
+        font-family: 'Titan One', sans-serif;
+        font-size: 1.450rem;
+        font-weight: 200;
+        margin-left: 11px;
+    }
+    
+    div h2, div h4 {
+        font-family: 'arial', sans-serif;
+        font-size: 1.0rem;
+        font-weight: 200;
+        color: #000000;
+        display: inline-block;
+        width: 80vw;       
+    }
+    
 }
