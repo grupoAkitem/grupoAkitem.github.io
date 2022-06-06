@@ -17,7 +17,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100px;
 }
 header a {
@@ -272,6 +272,28 @@ header a:hover {
     align-items: center;
     color: red;
     padding-left: 20px;
+}
+
+footer {
+    background-color: rgb(197, 197, 197);
+    font-size: 1.0rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+}
+  
+footer img {
+    height: 50px;
+}
+
+footer a {
+    color: black;
 }
 
 @media(max-width:1440px) and (min-width: 770px){

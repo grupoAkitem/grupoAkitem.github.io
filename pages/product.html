@@ -19,32 +19,37 @@
     <link rel="stylesheet" href="/css/productStyle.css">
     <link rel="stylesheet" href="/css/cardProducts.css">
     <link rel="stylesheet" href="/css/mobile.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
-    <section id="modal-trocar-senha">
-        <div class="form-senha">
+
+    <section id="modal-avaliar">
+        <div class="form-avaliar">
             <span id="sair-trocarSenha">X</span>
             <div id="trocarSenha">
             <div>
-                <h2>Alterar Senha</h2>
+                <h2>Avalie o Produto</h2>
                 <hr>
-                <div class="inputTrocSenha">
-                    <label style="margin-right: 14px;">Senha Atual</label>
-                    <input class="trocSenhaIn" type="password">
+                <div class="inputAval">
+                    <span style="margin-right: 14px;">Nome</span>
+                    <input class="inputsAvaliacaoo" type="text">
                 </div>
-                <div class="inputTrocSenha">
-                    <label>Nova Senha</label>
-                    <input class="trocSenhaIn" type="password">
+                <div class="inputAval">
+                    <span>Titulo da avaliação</span>
+                    <input class="inputsAvaliacaoo" type="text">
                 </div>
-                <div class="inputTrocSenha">
-                    <label>Nova Senha</label>
-                    <input class="trocSenhaIn" type="password">
+                <div class="inputAval">
+                    <span>Avaliação</span>
+                    <textarea class="inputsAvaliacaoo" name="" id=""></textarea>
                 </div>
-                <button id="btn-trocar-senhaa">Confirmar</button>
+                <div class="seleStartsAva"></div>
+                <button id="btn-avaliarr">Confirmar</button>
             </div>
         </div>
     </section>
+
+
     <header>
         <a href="/index.html">AkiTem</a>
         <div class="search">
@@ -95,15 +100,9 @@
             <section class="details-product">
                 <h1 class="titulo-product"></h1>
                 <div class="assessment">
-                    <div class="startsAva">
-                        <span class="material-icons seleStar">star</span>
-                        <span class="material-icons">star</span>
-                        <span class="material-icons">star</span>
-                        <span class="material-icons">star</span>
-                        <span class="material-icons">star</span>
-                    </div>
+                    <div class="startsAva"></div>
                     <div class="vendidos">
-                        <p>Avaliações <span>0</span></p>
+                        <p>Avaliações <span id="number-avaliacao">0</span></p>
                         <p class="vertical-line">|</p>
                         <p>Vendidos <span id="vendidos-span"></span></p>
                     </div>
@@ -187,25 +186,21 @@
             <div class="add-aval">
                 <div style="display: flex;">
                     <h2 style="font-size: 21px;">Avaliações</h2>
-                    <div style="margin-left: 20px;" class="startsAva">
-                        <span class="material-icons seleStar">star</span>
-                        <span class="material-icons">star</span>
-                        <span class="material-icons">star</span>
-                        <span class="material-icons">star</span>
-                        <span class="material-icons">star</span>
-                    </div>
+                    <div style="margin-left: 20px;" class="startsAva"></div>
                 </div>
                 <button id="btn-avaliar">Avaliar</button>
             </div>
             <hr>
-            <div>
-                <p>Sem Avaliações</p>
-            </div>
+            <div class="conjuntoAvaliacoes"></div>
         </section>
     </main>
 
 
-
+    <footer>
+        <span>akitem.devs@gmail.com</span>
+        <span>© 2022 Akitem. Todos os direitos reservados</span>
+          <a href="https://github.com/grupoAkitem/Akitem" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" /></a>
+      </footer>
     <div class="scripts">
         <script type="module" src="/scripts/productScript.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

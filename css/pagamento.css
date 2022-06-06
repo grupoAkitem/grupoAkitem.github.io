@@ -186,6 +186,28 @@ h2, h3{
 
 }
 
+footer {
+    background-color: rgb(197, 197, 197);
+    font-size: 1.0rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+    height: auto;
+    bottom: 0;
+}
+  
+footer img {
+    height: 50px;
+}
+
+footer a {
+    color: black;
+}
+
 
 .form input{
     width: 100%;

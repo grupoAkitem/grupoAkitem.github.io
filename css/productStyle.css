@@ -195,6 +195,32 @@ main {
     color: rgb(204, 204, 204);
 }
 
+.seleStartsAva {
+    color: rgb(204, 204, 204);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#btn-avaliarr {
+    width: 50%;
+    padding: 5px;
+    margin-top: 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+}
+
+#btn-avaliarr:hover {
+    background-color: rgb(1, 184, 1);
+}
+
+#btn-avaliarr:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 .seleStar {
     color: rgb(242, 200, 50);
 }
@@ -468,7 +494,7 @@ main {
     outline: 0;
 }
 
-#modal-trocar-senha {
+#modal-avaliar {
     position: fixed;
     z-index: 99999;
     background-color: rgba(41, 41, 41, 0.63);
@@ -479,27 +505,24 @@ main {
     height: 100%;
 }
 
-.form-senha {
-    position: relative;
+.form-avaliar {
+    position: fixed;
     width: 50%;
-    height: 50%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    justify-content: center;
-    align-items: center;
     border-radius: 8px;
     background-color: white;
-}
-
-.form-senha {
     text-align: center;
 }
 
-.inputTrocSenha {
+.inputAval {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
     margin: 15px 0;
 }
 
@@ -517,4 +540,23 @@ main {
 
 #sair-trocarSenha:hover {
    color: red;
+}
+
+.avaliacao-usuario {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-aval{
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.stars-Aval-usuario {
+    color: rgb(204, 204, 204);
+}
+
+.stars-Aval-usuario span {
+    font-size: 30px;
+    margin-top: 5px;
 }

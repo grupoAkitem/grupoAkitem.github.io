@@ -278,6 +278,28 @@ p {
     text-align: center;
 }
 
+footer {
+    background-color: rgb(197, 197, 197);
+    font-size: 1.0rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 48px;
+    padding: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+}
+  
+footer img {
+    height: 50px;
+}
+
+footer a {
+    color: black;
+}
+
 @media(max-width: 850px){
     .pro{
         display:flex;

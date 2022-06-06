@@ -17,6 +17,9 @@ const inputCep = document.getElementById('inputCep');
 const btnCep = document.getElementById('btnCep');
 const prazoCalculado = document.querySelector('.prazo-calculado');
 const calcularPrazo = document.querySelector('.calcular-prazo');
+const seleStartsAva = document.querySelector('.seleStartsAva');
+const conjuntoAvaliacoes = document.querySelector('.conjuntoAvaliacoes');
+const startsAva = document.querySelectorAll('.startsAva');
 const bntAddCart = document.querySelector('.bnt-addCart');
 const inputSearch = document.getElementById('search');
 const searchBtn = document.getElementById('search-btn');
@@ -24,8 +27,13 @@ const favoritar = document.getElementById('favoritar');
 const fav = document.querySelector('.fav');
 const numberCart = document.querySelector('.number-card');
 const btnComprar = document.querySelector('.bnt-comprar');
+const inputsAval = document.querySelectorAll('.inputsAvaliacaoo');
 const loginCadastro = document.getElementById('login-cadastro');
+const btnConfirmarAval = document.getElementById('btn-avaliarr');
+const numberAvaliacao = document.getElementById('number-avaliacao');
 const usuario = JSON.parse(localStorage.getItem('login'));
+const avalia = JSON.parse(localStorage.getItem('avaliacoesProdutos'));
+const idDoProduto = window.location.href.split('?')[1];
 const cart = {
     id: '',
     thumbnail: '',
@@ -33,6 +41,66 @@ const cart = {
     title: '',
     quanty: 1,
 }
+const avaliacao = {
+    idProd: '',
+    quantyStars: 0,
+    nome: '',
+    titulo: '',
+    aval: '',
+}
+
+btnConfirmarAval.addEventListener('click', () => {
+    avaliacao.nome = inputsAval[0].value;
+    avaliacao.titulo = inputsAval[1].value;
+    avaliacao.aval = inputsAval[2].value;
+    if (avalia === null) {
+        localStorage.setItem('avaliacoesProdutos', JSON.stringify([avaliacao]));
+    } else {
+        localStorage.setItem('avaliacoesProdutos', JSON.stringify([...avalia, avaliacao]));
+    }
+
+    inputsAval.forEach((e) => e.value = '');
+    window.location.href = `/pages/product.html?${idDoProduto}`
+})
+
+const createStars = (ind) => {
+    for (let i = 0; i < 5; i += 1) {
+        const sta = document.createElement('span');
+        const sta1 = document.createElement('span');
+        if (i <= ind) {
+            sta.className = 'material-icons seleStar'
+            sta1.className = 'material-icons seleStar'
+        } else {
+            sta.className = 'material-icons'
+            sta1.className = 'material-icons'
+        }
+        sta.innerText = 'star';
+        sta1.innerText = 'star';
+
+        startsAva[0].appendChild(sta);
+        startsAva[1].appendChild(sta1);
+    }
+};
+
+const setStars = ({target}) => {
+    seleStartsAva.innerHTML = '';
+    avaliacao.quantyStars = target.id;
+    for (let i = 0; i < 5; i += 1) {
+        const sta = document.createElement('span');
+        if (i <= target.id) {
+            sta.className = 'material-icons seleStar'
+        } else {
+            sta.className = 'material-icons'
+        }
+        sta.innerText = 'star';
+        sta.id = i;
+
+        seleStartsAva.appendChild(sta);
+        
+    }
+};
+
+seleStartsAva.addEventListener('click', setStars)
 
 const createGalery = ({ pictures }) => {
     mainImage.src = pictures[0].url
@@ -85,6 +153,7 @@ const createInformayionsCart = ({ title, price, thumbnail, id }) => {
     cart.thumbnail = thumbnail;
     cart.price = price.toFixed(2);
     cart.title = title;
+    avaliacao.idProd = id;
 };
 
 const mainImageDynamic = ({ target }) => {
@@ -246,30 +315,81 @@ const verifications = () => {
     document.querySelector(".nav-item #login-cadastro").appendChild(createCustomElement('span', 'perfil-name', usuario.nome.split(' ')[0]));
     document.getElementById("cart-number").innerText = `(${usuario.cart.length})`;
     } 
+
+    if (avalia !== null) {
+        const filterAvaliaId = avalia.filter((e) => e.idProd === idDoProduto);
+        if (filterAvaliaId.length > 0) {
+            let quantyStarTotal = 0;
+            filterAvaliaId.forEach((e) => {
+                conjuntoAvaliacoes.appendChild(createDivAval(e));
+                if (e.quantyStars === 'btn-avaliar') {
+                    quantyStarTotal += 0;
+                } else {
+                    quantyStarTotal += Number(e.quantyStars);
+                }
+            });
+            const madiaStars = quantyStarTotal / filterAvaliaId.length;
+            createStars(Math.ceil(madiaStars));
+            numberAvaliacao.innerText = filterAvaliaId.length;
+        } else {
+            createStars();
+        }
+    } else {
+        createStars();
+    }
 };
 
+const createDivStarsUsuario = (starUsuario) => {
+    const staUsu = document.createElement('div');
+    staUsu.className = 'stars-Aval-usuario';
+    for (let i = 0; i < 5; i += 1) {
+        const sta = document.createElement('span');
+        if (i <= starUsuario) {
+            sta.className = 'material-icons seleStar'
+        } else {
+            sta.className = 'material-icons'
+        }
+        sta.innerText = 'star';
+        staUsu.appendChild(sta);
+    }
+    return staUsu;
+};
+
+const createDivAval = ({aval, nome, quantyStars, titulo}) => {
+    const divGeralA = document.createElement('div');
+    const spanName = document.createElement('span');
+    const spanTitle = document.createElement('span');
+    const spanAvalCompleto = document.createElement('span');
+    const hrSeparar = document.createElement('hr');
+
+    divGeralA.className = 'avaliacao-usuario';
+    spanName.innerText = nome;
+    spanTitle.innerText = titulo;
+    spanTitle.className = 'title-aval';
+    spanAvalCompleto.innerText = aval;
+
+    divGeralA.appendChild(spanName);
+    divGeralA.appendChild(createDivStarsUsuario(quantyStars));
+    divGeralA.appendChild(spanTitle);
+    divGeralA.appendChild(spanAvalCompleto);
+    divGeralA.appendChild(hrSeparar);
+    return divGeralA;
+}
+
 const btnAvaliar = document.getElementById('btn-avaliar');
-const modalTrocSenha = document.getElementById('modal-trocar-senha');
-const inputsTrocSenha = document.querySelectorAll('.trocSenhaIn');
-const btnSenhaConfirm = document.getElementById('btn-trocar-senhaa');
+const modalAvaliar = document.getElementById('modal-avaliar');
 const sairModal = document.getElementById('sair-trocarSenha');
 
-btnAvaliar.addEventListener('click', () => {
-    modalTrocSenha.style.display = 'flex';
+btnAvaliar.addEventListener('click', (event) => {
+    modalAvaliar.style.display = 'flex';
+    setStars(event);
 })
 
 sairModal.addEventListener('click', () => {
-    modalTrocSenha.style.display = 'none';
+    modalAvaliar.style.display = 'none';
 })
 
-btnSenhaConfirm.addEventListener('click', () => {
-    if (inputsTrocSenha[1].value === inputsTrocSenha[2].value && inputsTrocSenha[0].value === usuario.senha && inputsTrocSenha[2].value !== '') {
-        usuario.active = false;
-        usuario.senha = inputsTrocSenha[1].value;
-        localStorage.setItem('login', JSON.stringify(usuario));
-        window.location.href = '/pages/login.html';
-    }
-})
+
 
 window.onload = () => {
     createDetails();
