@@ -156,7 +156,7 @@ qs('.boleto form button').addEventListener('click', () => {
 
 
         doc.text('Beneficiário: Akitem', 15, 13);
-        doc.text(`Valor: R$${valor.toFixed(2)}`, 122, 13)
+        doc.text(`Valor: R$${valor}`, 122, 13)
         doc.text(`Pagador: ${nameBill.value}`, 15, 30);
         doc.text(`CPF:  ${cpfBill.value}`, 15, 45);
         doc.text(`${addressBill.value}     Nº ${numBill.value}`, 15, 60);
